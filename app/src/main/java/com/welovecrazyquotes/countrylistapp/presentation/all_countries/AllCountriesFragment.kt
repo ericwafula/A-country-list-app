@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.welovecrazyquotes.countrylistapp.databinding.FragmentAllCountriesBinding
@@ -35,7 +36,9 @@ class AllCountriesFragment : Fragment() {
 
     private fun initViews() {
         countryAdapter = CountryAdapter(requireContext()) { country ->
-            Log.d("TAG", "initViews: $country")
+            val action = AllCountriesFragmentDirections.actionAllCountriesFragmentToCountryDetailFragment(
+                country.name?.common!!.lowercase())
+            findNavController().navigate(action)
         }
         binding.rcvCountries.apply {
             layoutManager = LinearLayoutManager(
@@ -49,6 +52,7 @@ class AllCountriesFragment : Fragment() {
             viewModel.allCountries.collect { event ->
                 if (event.isLoading) {
                     binding.progressBar.visibility = View.VISIBLE
+                    binding.txvErrorMessage.text = ""
                 }
                 if (event.message?.isNotEmpty() == true) {
                     binding.txvErrorMessage.text = event.message
@@ -56,6 +60,7 @@ class AllCountriesFragment : Fragment() {
                 }
                 if (event.data != null) {
                     binding.progressBar.visibility = View.GONE
+                    binding.txvErrorMessage.text = ""
                     lifecycleScope.launchWhenCreated {
                         countryAdapter.submitList(event.data)
                     }

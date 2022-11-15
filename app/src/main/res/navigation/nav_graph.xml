@@ -9,5 +9,22 @@
         android:id="@+id/allCountriesFragment"
         android:name="com.welovecrazyquotes.countrylistapp.presentation.all_countries.AllCountriesFragment"
         android:label="@string/explore"
-        tools:layout="@layout/fragment_all_countries" />
+        tools:layout="@layout/fragment_all_countries">
+        <action
+            android:id="@+id/action_allCountriesFragment_to_countryDetailFragment"
+            app:destination="@id/countryDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/countryDetailFragment"
+        android:name="com.welovecrazyquotes.countrylistapp.presentation.country_detail.CountryDetailFragment"
+        android:label="@string/explore"
+        tools:layout="@layout/fragment_country_detail">
+        <action
+            android:id="@+id/action_countryDetailFragment_to_allCountriesFragment"
+            app:destination="@id/allCountriesFragment" />
+        <argument
+            android:name="countryName"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
 </navigation>
