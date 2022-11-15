@@ -46,7 +46,7 @@ class RepositoryImpl @Inject constructor(
                 val countries = apiService.getAllCountries().map { countryDto ->
                     countryDto.toCountry()
                 }
-                countries.find { country -> country.name.common == name }?.let {
+                countries.find { country -> country.name?.common == name }?.let {
                     emit(Resource.Success(it))
                 }
             } catch (e: HttpException) {

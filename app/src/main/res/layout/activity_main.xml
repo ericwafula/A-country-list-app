@@ -19,40 +19,6 @@
             app:menu="@menu/toolbar_menu" />
     </com.google.android.material.appbar.AppBarLayout>
 
-<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--        android:id="@+id/top_bar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent">-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/title"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_margin="12dp"-->
-<!--            android:fontFamily="sans-serif"-->
-<!--            android:text="@string/explore"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="30sp"-->
-<!--            android:textStyle="bold"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--        <ImageView-->
-<!--            android:id="@+id/ui_mode"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_margin="12dp"-->
-<!--            android:contentDescription="@string/moon_icon"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:srcCompat="@drawable/moon" />-->
-<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
-
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_frag"
         android:name="androidx.navigation.fragment.NavHostFragment"

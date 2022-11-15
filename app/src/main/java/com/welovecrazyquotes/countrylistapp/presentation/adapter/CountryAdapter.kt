@@ -33,9 +33,9 @@ class CountryAdapter(private val context: Context, private val onItemClicked: (C
         fun bind(country: Country, context: Context) {
             binding.apply {
                 Glide.with(context)
-                    .load(country.flags.png)
-                    .into(flag)
-                countryy.text = country.name.common
+                    .load(country.flags?.png)
+                    .into(imvFlag)
+                txvCountry.text = country.name?.common
             }
         }
     }
@@ -43,7 +43,7 @@ class CountryAdapter(private val context: Context, private val onItemClicked: (C
     companion object {
         private val diffCallBack = object : DiffUtil.ItemCallback<Country>() {
             override fun areItemsTheSame(oldItem: Country, newItem: Country): Boolean {
-                return oldItem.name.common == newItem.name.common
+                return oldItem.name?.common == newItem.name?.common
             }
 
             override fun areContentsTheSame(oldItem: Country, newItem: Country): Boolean {

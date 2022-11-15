@@ -3,4 +3,8 @@
     <string name="explore">Explore</string>
     <string name="moon_icon">moon icon</string>
     <string name="mode">mode</string>
+    <string name="en">EN</string>
+    <string name="filter">Filter</string>
+    <string name="country">Country</string>
+    <string name="flag_image">flag image</string>
 </resources>

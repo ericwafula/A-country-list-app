@@ -7,27 +7,27 @@ import com.welovecrazyquotes.countrylistapp.domain.model.Currency
 
 
 data class CountryDto(
-    val name: NameDto,
-    val currencies: Map<String, CurrencyDto>,
-    val capital: List<String>,
-    val region: String,
-    val subregion: String,
-    val languages: Map<String, String>,
-    val population: Int,
-    val flags: FlagDto
+    val name: NameDto?,
+    val currencies: Map<String, CurrencyDto>?,
+    val capital: List<String>?,
+    val region: String?,
+    val subregion: String?,
+    val languages: Map<String, String>?,
+    val population: Int?,
+    val flags: FlagDto?
 )
 
 @RequiresApi(Build.VERSION_CODES.N)
 fun CountryDto.toCountry(): Country {
     return Country(
-        name = name.toName(),
-        currencies = currencies.toCurrencies(),
+        name = name?.toName(),
+        currencies = currencies?.toCurrencies(),
         capital = capital,
         region = region,
         subregion = subregion,
         languages = languages,
         population = population,
-        flags = flags.toFlag()
+        flags = flags?.toFlag()
     )
 }
 
