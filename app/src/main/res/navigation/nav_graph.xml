@@ -8,6 +8,6 @@
     <fragment
         android:id="@+id/allCountriesFragment"
         android:name="com.welovecrazyquotes.countrylistapp.presentation.all_countries.AllCountriesFragment"
-        android:label="fragment_all_countries"
+        android:label="@string/explore"
         tools:layout="@layout/fragment_all_countries" />
 </navigation>
